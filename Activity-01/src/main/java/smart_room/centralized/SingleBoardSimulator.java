@@ -2,14 +2,14 @@ package smart_room.centralized;
 
 import smart_room.*;
 
-public class SinglelBoardSimulator extends AbstractEventSource implements LightDevice, LuminositySensorDevice, PresenceDetectionDevice {
+public class SingleBoardSimulator extends AbstractEventSource implements LightDevice, LuminositySensorDevice, PresenceDetectionDevice {
 
 	private SingleBoardFrame frame;
 
 	private double currentLuminosityLevel;
 	private boolean isPresenceDetected;
 
-	SinglelBoardSimulator(){	
+	SingleBoardSimulator(){
 	}
 	
 	public void init() {

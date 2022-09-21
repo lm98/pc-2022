@@ -7,7 +7,6 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,7 +23,7 @@ import javax.swing.event.ChangeEvent;
 class SingleBoardFrame extends JFrame implements ActionListener {		
 	
 	
-	private SinglelBoardSimulator sim;
+	private SingleBoardSimulator sim;
 	
 	private JTextField lumValue;
 	private JSlider lumSlider;
@@ -35,7 +34,7 @@ class SingleBoardFrame extends JFrame implements ActionListener {
 	private boolean isOn;
 	
 	
-	public SingleBoardFrame(SinglelBoardSimulator sim){
+	public SingleBoardFrame(SingleBoardSimulator sim){
 		this.sim = sim;
 		setTitle("Board Simulator");
 		setSize(400,600);

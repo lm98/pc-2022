@@ -6,12 +6,10 @@ public class TestSingleBoardSimulator {
 
 	public static void main(String[] args) throws Exception {
 
-		SinglelBoardSimulator board = new SinglelBoardSimulator();
+		SingleBoardSimulator board = new SingleBoardSimulator();
 		board.init();
 	
-		board.register((Event ev) -> {
-			System.out.println("New event: " + ev);
-		});
+		board.register((Event ev) -> System.out.println("New event: " + ev));
 		
 		new Thread(() -> {
 			while (true) {
