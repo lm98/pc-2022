@@ -9,6 +9,10 @@ public class App {
     public static void main(String[] args){
         Vertx vertx = Vertx.vertx();
         PIRAgent pirAgent = new PIRAgent(PORT, HOST_NAME, "MyPir");
+        LumSensorAgent lumAgent = new LumSensorAgent(PORT, HOST_NAME, "MyLum");
+        LightAgent lightAgent = new LightAgent(PORT, HOST_NAME, "MyLight");
         vertx.deployVerticle(pirAgent);
+        vertx.deployVerticle(lumAgent);
+        vertx.deployVerticle(lightAgent);
     }
 }

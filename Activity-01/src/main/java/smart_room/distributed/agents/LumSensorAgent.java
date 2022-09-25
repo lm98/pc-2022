@@ -4,18 +4,17 @@ import io.netty.handler.codec.mqtt.MqttQoS;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.mqtt.MqttClient;
-import smart_room.distributed.PresDetectSensorSimulator;
+import smart_room.distributed.LuminositySensorSimulator;
 
-public class PIRAgent extends AbstractVerticle {
-    private final PresDetectSensorSimulator sensor;
+public class LumSensorAgent extends AbstractVerticle {
+    private final LuminositySensorSimulator sensor;
     private final int port;
     private final String host;
 
-    public PIRAgent(int port, String host, String id){
+    public LumSensorAgent(int port, String host, String id){
         this.port = port;
-        this.sensor = new PresDetectSensorSimulator(id);
         this.host = host;
-
+        this.sensor = new LuminositySensorSimulator(id);
     }
 
     @Override
@@ -27,9 +26,9 @@ public class PIRAgent extends AbstractVerticle {
             log("Connected");
             sensor.register(e -> {
                 log("Publishing event");
-                var presence = sensor.presenceDetected();
-                client.publish(Topics.PIRTopics.TOPIC,
-                        Buffer.buffer(presence? Topics.PIRTopics.IS_PRESENT : Topics.PIRTopics.IS_NOT_PRESENT),
+                var luminosity = sensor.getLuminosity();
+                client.publish(Topics.LuminositySensorTopics.TOPIC,
+                        Buffer.buffer(String.valueOf(luminosity)),
                         MqttQoS.AT_LEAST_ONCE,
                         false,
                         false);
