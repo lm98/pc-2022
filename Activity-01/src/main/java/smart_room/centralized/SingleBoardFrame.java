@@ -23,7 +23,7 @@ import javax.swing.event.ChangeEvent;
 class SingleBoardFrame extends JFrame implements ActionListener {		
 	
 	
-	private SingleBoardSimulator sim;
+	private SinglelBoardSimulator sim;
 	
 	private JTextField lumValue;
 	private JSlider lumSlider;
@@ -34,7 +34,7 @@ class SingleBoardFrame extends JFrame implements ActionListener {
 	private boolean isOn;
 	
 	
-	public SingleBoardFrame(SingleBoardSimulator sim){
+	public SingleBoardFrame(SinglelBoardSimulator sim){
 		this.sim = sim;
 		setTitle("Board Simulator");
 		setSize(400,600);

@@ -3,11 +3,11 @@ package smart_room.centralized;
 import smart_room.Event;
 
 public class SynchSingleBoardAgent extends Thread{
-    private final SingleBoardSimulator board;
+    private final SinglelBoardSimulator board;
     private final double threshold;
 
     SynchSingleBoardAgent(double t){
-        this.board = new SingleBoardSimulator();
+        this.board = new SinglelBoardSimulator();
         board.init();
         board.register((Event ev) -> System.out.println("New event: " + ev));
         this.threshold = t;

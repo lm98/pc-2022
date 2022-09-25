@@ -6,7 +6,7 @@ public class TestSingleBoardSimulator {
 
 	public static void main(String[] args) throws Exception {
 
-		SingleBoardSimulator board = new SingleBoardSimulator();
+		SinglelBoardSimulator board = new SinglelBoardSimulator();
 		board.init();
 	
 		board.register((Event ev) -> System.out.println("New event: " + ev));
